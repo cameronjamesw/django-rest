@@ -38,6 +38,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-cameronjames-djangorest-ogiz7vm1a31.ws-eu116.gitpod.io']
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-cameronjames-djangorest-ogiz7vm1a31.ws-eu116.gitpod.io']
+
 
 # Application definition
 
