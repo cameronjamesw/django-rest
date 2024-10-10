@@ -8,7 +8,7 @@ class CommentSerializer(serializers.ModelSerializer):
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
 
     def get_is_owner(self, obj):
-        request = self.content['request']
+        request = self.context['request']
         return request.user == obj.owner
 
     class Meta:
@@ -19,5 +19,5 @@ class CommentSerializer(serializers.ModelSerializer):
             'updated_at', 'content'
         ]
 
-    class CommentDetailSerializer():
-        post = serializers.ReadOnlyField(source='post.id')
+class CommentDetailSerializer(CommentSerializer):
+    post = serializers.ReadOnlyField(source='post.id')
