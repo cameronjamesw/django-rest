@@ -1,18 +1,22 @@
-from django.shortcuts import render
 from rest_framework import generics
+from drf_api.permissions import IsOwnerOrReadOnly
 from .models import Profile
 from .serializers import ProfileSerializer
-from drf_api.permissions import IsOwnerOrReadOnly
 
-# Create your views here.
 
 class ProfileList(generics.ListAPIView):
-    def get(self, request):
-        queryset = Profile.objects.all()
-        serializer = ProfileSerializer(profiles, many=True, context={"request": request})
-        
+    """
+    List all profiles.
+    No create view as profile creation is handled by django signals.
+    """
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):
-    serializer_class = ProfileSerializer
+    """
+    Retrieve or update a profile if you're the owner.
+    """
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
