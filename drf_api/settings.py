@@ -62,7 +62,8 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-cameronjames-djangorest-v0vlcw71cb8.ws-eu116.gitpod.io',
-    'cams-api.herokuapp.com'
+    'cams-api.herokuapp.com',
+    'cams-api-63fe6b3dbe56.herokuapp.com',
 ]
 
 
