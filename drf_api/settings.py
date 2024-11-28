@@ -64,6 +64,7 @@ DEBUG = 'DEV' in os.environ
 ALLOWED_HOSTS = [
     '8000-cameronjames-djangorest-v0vlcw71cb8.ws-eu116.gitpod.io',
     'cams-api.herokuapp.com',
+    '8000-cameronjames-djangorest-qnjnn0p0h9w.ws.codeinstitute-ide.net',
     os.environ.get('ALLOWED_HOST'),
     '8000-cameronjames-djangorest-jjyrrh9rrju.ws.codeinstitute-ide.net',
 ]
